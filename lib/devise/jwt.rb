@@ -37,6 +37,10 @@ module Devise
     setting(:secret, Warden::JWTAuth.config.secret) do |value|
       forward_to_warden(:secret, value)
     end
+    
+    setting(:algorithm, Warden::JWTAuth.config.algorithm) do |value|
+      forward_to_warden(:algorithm, value)
+    end
 
     setting(:expiration_time, Warden::JWTAuth.config.expiration_time) do |value|
       forward_to_warden(:expiration_time, value)
